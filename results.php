@@ -33,6 +33,7 @@ $dvds = $statement->fetchAll(PDO::FETCH_OBJ);
 //No results are returned from the query
 if(!$dvds){
   echo "No results found.";
+  echo '<a href="index.php">Go Back </a>';
 }
 ?>
 
@@ -41,8 +42,10 @@ if(!$dvds){
   <head>
       <meta charset="utf-8">
       <title> Results Page</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+  <div id="container">
   <?php foreach($dvds as $dvd) : ?>
     <h1>
       Title: <?php echo $dvd->title ?>
@@ -57,7 +60,9 @@ if(!$dvds){
 
     Rating: <a href="ratings.php?rating=<?php echo $dvd->rating_name ?>"> <?php echo $dvd->rating_name ?> </a>
     </div>
+    <hr>
   <?php endforeach; ?>
+  </div>
   </body>
 
 </html>

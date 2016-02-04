@@ -29,8 +29,10 @@ $dvds = $statement->fetchAll(PDO::FETCH_OBJ);
   <head>
       <meta charset="utf-8">
       <title> Ratings </title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+    <div id="container">
     <h1>Ratings</h1>
 
     <?php foreach($dvds as $dvd) : ?>
@@ -38,6 +40,6 @@ $dvds = $statement->fetchAll(PDO::FETCH_OBJ);
       <?php echo $dvd->title ?>
     </div>
     <?php endforeach; ?>
-
+   </div>
   </body>
 </html>
